@@ -1,0 +1,19 @@
+{{ partial "header" . }}
+  <main>
+    <div class="intro">
+      <h1>{{ .Site.Title }}</h1>
+      <h2>{{ .Site.Params.Description }}</h2>
+      {{ .Data.Pages }}
+      {{ .Site.Params.author }}
+
+      <ul id="list">
+        {{ range .Data.Pages }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </main>
+{{ partial "footer" . }}

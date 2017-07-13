@@ -1,0 +1,20 @@
+{{ partial "header" . }}
+  <main>
+    <div class="intro">
+      <h1>{{ .Site.Title }}</h1>
+      <h2>{{ humanize .Title }}</h2>
+
+      <h3>{{ .ReadingTime }} minute(s) to read.</h3>
+
+      <p>
+        Tags: {{ delimit .Params.tags "; " }}
+      </p>
+
+      {{ .TableOfContents }}
+
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </main>
+{{ partial "footer" . }}
